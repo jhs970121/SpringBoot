@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function (){
+        $("#ajaxTest").click(function (){
+            $.ajax({
+                url: "test2?name=hong&age=30",
+                success:function(data) {
+                  var output = "<ul>";
+                  output += "<li>"+data.name+"</li>";
+                  output += "<li>"+data.age+"</li>";
+                  output += "</ul>";
+
+                  $("#ajaxTest").after(output);
+
+                }//success
+
+            });//ajax
+        });
+      });
+
+    </script>
+</head>
+<body>
+  <button type="button" id="ajaxTest">Ajax 호출</button>
+</body>
+</html>
