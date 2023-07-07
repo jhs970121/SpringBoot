@@ -47,7 +47,7 @@ $(document).ready(function(){
 			return false;
 		}else {
 			$.ajax({
-				url :"id_check.do?id="+$("#id").val() ,
+				url :"idcheck/"+$("#id").val()+"/" ,
 				success : function(result) {
 					if(result == 0){
 						$("#idCheck_msg").text("사용 가능한 아이디 입니다").css("color","blue")

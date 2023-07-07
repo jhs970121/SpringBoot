@@ -21,7 +21,7 @@
 	<div class="content">
 		<section class="join">
 			<h1 class="title">회원가입</h1>
-			<form name="joinForm" action="join_proc.do" method="post">
+			<form name="joinForm" action="join" method="post">
 				<ul>
 					<li>
 						<label>아이디</label>

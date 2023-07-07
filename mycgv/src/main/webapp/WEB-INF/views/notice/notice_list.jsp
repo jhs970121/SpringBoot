@@ -52,12 +52,12 @@
 					<th>조회수</th>
 					<th>작성일자</th>
 				</tr>
-				<c:forEach var="noticeVo" items="${noticeVo}">
+				<c:forEach var="notice" items="${list}">
 				<tr>
-					<td>${noticeVo.rno }</td>
-					<td><a href="notice_content.do?nid=${noticeVo.nid }">${noticeVo.ntitle }</a></td>
-					<td>${noticeVo.nhits }</td>
-					<td>${noticeVo.ndate }</td>
+					<td>${notice.rno }</td>
+					<td><a href="notice_content.do?nid=${notice.nid }">${notice.ntitle }</a></td>
+					<td>${notice.nhits }</td>
+					<td>${notice.ndate }</td>
 				</tr>
 				</c:forEach>
 				<tr>

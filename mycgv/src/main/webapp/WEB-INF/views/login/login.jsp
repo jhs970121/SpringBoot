@@ -16,7 +16,7 @@
 		alert("로그인 완료");
 	}
 
-	if(join_result == 'OK') {
+	if(join_result == 'ok') {
 		alert("회원가입 완료");
 	}
 </script>
