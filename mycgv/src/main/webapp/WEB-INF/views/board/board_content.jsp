@@ -47,13 +47,13 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<a href="board_update.do?bid=${bvo.bid}">
+						<a href="board_update/${bvo.bid}">
 							<button type="button" class="btn_style">수정하기</button></a>
-						<a href="board_delete.do?bid=${bvo.bid}&bsfile=${bvo.bsfile}">
+						<a href="board_delete/${bvo.bid}/${bvo.bsfile}">
 							<button type="button" class="btn_style">삭제하기</button></a>
-						<a href="board_list.do">
+						<a href="/board_list/${page}">
 							<button type="button" class="btn_style">리스트</button></a>
-						<a href="http://localhost:9000/index.do">
+						<a href="http://localhost:9000/">
 						<button type="button" class="btn_style">홈으로</button></a>
 					</td>
 				</tr>

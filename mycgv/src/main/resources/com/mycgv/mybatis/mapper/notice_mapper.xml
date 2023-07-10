@@ -6,12 +6,18 @@
 
 <mapper namespace="com.springboot.mycgv.repository.NoticeMapper">
 
-	<select id="list" parameterType="map" resultType="com.springboot.mycgv.dto.NoticeDto">
+	<select id="list" parameterType="com.springboot.mycgv.dto.PageDto" resultType="com.springboot.mycgv.dto.NoticeDto">
 		select rno, nid, ntitle, ncontent, nhits, ndate
 		from(select ROWNUM rno, nid, ntitle, ncontent, nhits,  to_char(NDATE,'yyyy-mm-dd') ndate
 			 from(select nid, ntitle, ncontent, nhits, ndate
 				  from MYCGV_NOTICE))
-		where rno between #{start} and #{end}
+		where rno between #{startCount} and #{endCount}
+	</select>
+
+	<select id="content" parameterType="String" resultType="com.springboot.mycgv.dto.NoticeDto">
+		select nid, ntitle, ncontent, nhits, ndate, nfile1, nsfile1, nfile2, nsfile2
+		from MYCGV_NOTICE
+		where nid = #{nid}
 	</select>
 
 
@@ -53,10 +59,6 @@
 <!--				#{nsfile2})-->
 <!--	</insert>-->
 
-<!--	<select id="content" parameterType="String" resultType="com.mycgv_jsp.vo.NoticeVo">-->
-<!--		select nid, ntitle, ncontent, nhits, ndate, nfile1, nsfile1, nfile2, nsfile2 -->
-<!--		from MYCGV_NOTICE -->
-<!--		where nid = #{nid}-->
-<!--	</select>-->
+
 
 </mapper>

@@ -15,10 +15,10 @@
 	$(document).ready(function(){
 		var pager = jQuery('#ampaginationsm').pagination({
 		
-		    maxSize: "${maxSize}",	    		// max page size
-		    totals: "${totals}",	// total pages	
-		    page: "${page}",		// initial page		
-		    pageSize: "${pageSize}",			// max number items per page
+		    maxSize: "${page.pageCount}",	    		// max page size
+		    totals: "${page.dbCount}",	// total pages
+		    page: "${page.reqPage}",		// initial page
+		    pageSize: "${page.pageSize}",			// max number items per page
 		
 		    // custom labels		
 		    lastText: '&raquo;&raquo;', 		
@@ -31,7 +31,7 @@
 		
 		jQuery('#ampaginationsm').on('am.pagination.change',function(e){
 			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "http://localhost:9000/notice_list.do?page="+e.page);
+	           $(location).attr('href', "http://localhost:9000/notice_list/"+e.page+"/");
 	    });
 		
  	});
@@ -55,7 +55,7 @@
 				<c:forEach var="notice" items="${list}">
 				<tr>
 					<td>${notice.rno }</td>
-					<td><a href="notice_content.do?nid=${notice.nid }">${notice.ntitle }</a></td>
+					<td><a href="/notice_content/${notice.nid}/${page.reqPage}/">${notice.ntitle }</a></td>
 					<td>${notice.nhits }</td>
 					<td>${notice.ndate }</td>
 				</tr>

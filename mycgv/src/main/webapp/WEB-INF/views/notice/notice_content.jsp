@@ -19,25 +19,25 @@
 			<table class="notice_content">
 				<tr>
 					<th>제목</th>
-					<td>${noticeVo.ntitle}</td>
+					<td>${notice.ntitle}</td>
 				</tr>
 				<tr>
 					<th>내용</th>
-					<td>${noticeVo.ncontent}</td>
+					<td>${notice.ncontent}</td>
 				</tr>
 				<tr>
 					<th>조회수</th>
-					<td>${noticeVo.nhits}</td>
+					<td>${notice.nhits}</td>
 				</tr>
 				<tr>
 					<th>작성일자</th>
-					<td>${noticeVo.ndate}</td>
+					<td>${notice.ndate}</td>
 				</tr>
 				<tr>
 					<td colspan="2">
-						<a href="notice_list.do">
+						<a href="/notice_list/${page}">
 							<button type="button" class="btn_style">리스트</button></a>
-						<a href="http://localhost:9000/index.do">
+						<a href="http://localhost:9000/">
 						<button type="button" class="btn_style">홈으로</button></a>
 					</td>
 				</tr>
