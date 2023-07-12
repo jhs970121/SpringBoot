@@ -38,37 +38,38 @@
 	<div class="content">
 		<section class="board">
 			<h1 class="title">게시판</h1>
-			<form name="updateForm" action="board_update_proc.do" method="post" enctype="multipart/form-data">
+			<form name="updateForm" action="/board_update" method="post" enctype="multipart/form-data">
 				<table border=1>
 					<tr>
 						<th>제목</th>
 						<td>
-							<input type="text" name="btitle" id="btitle" value="${boardVo.btitle }">
+							<input type="text" name="btitle" id="btitle" value="${board.btitle }">
 						</td>
 					</tr>
 					<tr>
 						<th>내용</th>
 						<td>
-							<textarea rows="5" cols="30" name="bcontent">${boardVo.bcontent }</textarea>
+							<textarea rows="5" cols="30" name="bcontent">${board.bcontent }</textarea>
 						</td>
 					</tr>
 					<tr>
 						<th>작성자</th>
 						<td>
-							<input type="text" name="id" value="${boardVo.id }" disabled>
-							<input type="hidden" name="id" value="${boardVo.id }">
-							<input type="hidden" name="bid" value="${boardVo.bid }">
+							<input type="text" name="id" value="${board.id}" disabled>
+							<input type="hidden" name="id" value="${board.id}">
+							<input type="hidden" name="bid" value="${board.bid}">
+							<input type="hidden" name="page" value="${page}">
 						</td>
 					</tr>
 					<tr>
 						<th>파일업로드</th>
 						<td>
-							<input type="hidden" name="bfile" value="${boardVo.bfile }">
-							<input type="hidden" name="bfile" value="${boardVo.bsfile }">
+							<input type="hidden" name="bfile" value="${board.bfile }">
+							<input type="hidden" name="bsfile" value="${board.bsfile }">
 							<input type="file" name="file1" id="file1">
 							<c:choose>
-								<c:when test="${boardVo.bfile != null }">
-									<span id="update_file">${boardVo.bfile}</span>
+								<c:when test="${board.bfile != null }">
+									<span id="update_file">${board.bfile}</span>
 								</c:when>
 								<c:otherwise>
 									<span id="update_file"></span>
@@ -80,9 +81,9 @@
 						<td colspan="2">
 							<button type="button" class="btn_style" id="btnBoardUpdate">수정완료</button>
 							<button type="reset" class="btn_style">다시쓰기</button>
-							<a href="board_content.do?bid=${boardVo.bid }">
+							<a href="/board_content/${board.bid}/${page}/">
 								<button type="button" class="btn_style">이전페이지</button></a>
-							<a href="board_list.do">
+							<a href="/board_list/${page}">
 								<button type="button" class="btn_style">리스트</button></a>							
 						</td>				
 					</tr>

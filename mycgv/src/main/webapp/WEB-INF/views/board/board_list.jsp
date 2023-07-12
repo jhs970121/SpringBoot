@@ -36,7 +36,16 @@
 			});
 
 		});
+
 	</script>
+<%--	<script>--%>
+<%--		let update_comp = ${update_comp}--%>
+
+<%--		if(update_comp == "ok") {--%>
+<%--			alert("게시글 수정 완료");--%>
+<%--		}--%>
+<%--	</script>--%>
+
 </head>
 <body>
 	
@@ -50,7 +59,7 @@
 			<table class="board_list">
 				<tr>
 					<td colspan="5">
-						<a href="board_write">
+						<a href="/board_write">
 							<button type="button" class="btn_style2">글쓰기</button>
 						</a>
 					</td>

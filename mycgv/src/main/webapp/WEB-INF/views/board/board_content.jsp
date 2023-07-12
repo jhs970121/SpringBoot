@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>MYCGV</title>
 <link rel="stylesheet" href="http://localhost:9000/css/mycgv_jsp.css">
+
 </head>
 <body>
 	<!-- header -->
@@ -22,34 +23,34 @@
 			<table class="board_content">
 				<tr>
 					<th>제목</th>
-					<td>${bvo.btitle }</td>
+					<td>${board.btitle }</td>
 				</tr>
 				<tr>
 					<th>내용</th>
 					<td>
-						${bvo.bcontent}<br><br><br>
-						<c:if test="${bvo.bsfile != null}">
-							<img class="upload_photo" src="http://localhost:9000/upload/${bvo.bsfile}">
+						${board.bcontent}<br><br><br>
+						<c:if test="${board.bsfile != null}">
+							<img class="upload_photo" src="http://localhost:9000/upload/${board.bsfile}">
 						</c:if>
 					</td>
 				</tr>
 				<tr>
 					<th>조회수</th>
-					<td>${bvo.bhits}</td>
+					<td>${board.bhits}</td>
 				</tr>
 				<tr>
 					<th>작성자</th>
-					<td>${bvo.id}</td>
+					<td>${board.id}</td>
 				</tr>
 				<tr>
 					<th>작성일자</th>
-					<td>${bvo.bdate}</td>
+					<td>${board.bdate}</td>
 				</tr>
 				<tr>
 					<td colspan="2">
-						<a href="board_update/${bvo.bid}">
+						<a href="/board_update/${board.bid}/${page}/">
 							<button type="button" class="btn_style">수정하기</button></a>
-						<a href="board_delete/${bvo.bid}/${bvo.bsfile}">
+						<a href="/board_delete/${board.bid}/${page}/">
 							<button type="button" class="btn_style">삭제하기</button></a>
 						<a href="/board_list/${page}">
 							<button type="button" class="btn_style">리스트</button></a>
