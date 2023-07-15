@@ -26,6 +26,12 @@ public class BoardController {
     @Autowired
     private FileUploadService fileUploadService;
 
+    @GetMapping("board_list_json")
+    public String board_list_json() {
+        return "/board/board_list_json";
+    }
+
+
     @PostMapping("board_delete")
     public String board_delete_proc(BoardDto boardDto) throws Exception {
         //파일 포함 O
